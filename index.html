@@ -1,0 +1,168 @@
+
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나무 커뮤니케이션</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/assets/style/normalize.css" />
+  <link rel="stylesheet" href="/assets/style/main.css" />
+</head>
+
+<body>  
+<h1 class="logo">나무커뮤니케이션</h1>
+
+<!-- Global Navigation Bar -->
+<section class="gnb">
+  <button type="button">
+    <span class="a11y-hidden">전체매뉴 열기</span>
+  </button>
+
+  <div class="gnb-slogan">
+    <p>
+      NO.1<br>
+      DIGITAL MARKETING<br>
+      PERFORMANCE GROUP
+
+      <small><strong>namu</strong> communication</small>
+    </p>
+    
+    <div class="gnb-slogan-links">
+      <a href="http://www.namukorea.com/renew2/index.php" target="_blank" title="새 창">나무 홈페이지</a>
+      <a href="https://www.facebook.com/namukorea" target="_blank" title="새 창">나무 페이스북</a>
+      <a href="https://blog.naver.com/namukorea82" target="_blank" title="새 창">나무 블로그</a>
+    </div>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">회사소개</a></li>
+      <li><a href="#">광고상품</a></li>
+      <li><a href="#">레퍼런스</a></li>
+      <li><a href="#">솔루션</a></li>
+      <li><a href="#">광고문의</a></li>
+    </ul>
+  </nav>
+</section>
+<!-- //Global Navigation Bar -->
+
+<!-- Main Area -->
+<main>
+  <div class="swiper main-swiper">
+    <div class="swiper-wrapper">
+      <!-- Main -->
+      <div class="swiper-slide slide01">
+        <div class="slogan">
+          <div>
+            <span><strong>브</strong></span>
+            <span><strong>랜</strong></span>
+            <span><strong>드</strong></span>
+            <span>의</span>
+            <span><strong>가</strong></span>
+            <span><strong>치</strong></span>
+            <span>를</span>
+            <span>키</span>
+            <span>웁</span>
+            <span>니</span>
+            <span>다</span>
+          </div>
+
+          <p><small>NO.1 DIGITAL MARKETING PERFORMANCE GROUP</small> NAMU COMMUNICATION</p>
+        </div>
+      </div>
+      <!-- //Main -->
+
+      <!-- 주요 광고 상품 -->
+      <div class="swiper-slide slide02">
+        
+        <div class="swiper mainAdProduct-swiper">          
+          <div class="swiper-wrapper">          
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>                       
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      
+      </div>
+      <!-- //주요 광고 상품 -->
+
+      <div class="swiper-slide slide03">Slide 3</div>
+      <div class="swiper-slide slide04">Slide 4</div>
+      <div class="swiper-slide slide05">Slide 5</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</main>
+<!-- //Main Area -->
+
+<!-- Quick Link -->
+<section class="ql">
+  <a href="#">빠른문의</a>
+  <a href="#">1:1 채팅상담</a>
+</section>
+<!-- //Quick Link -->
+
+
+  
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    const sectionLabel = ['Main', '주요광고상품', '레퍼런스', '솔루션', '광고문의'];
+
+    const swiper = new Swiper(".main-swiper", {
+      direction: "vertical",
+      mousewheel: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<div class="' + className + '"><span>' + (sectionLabel[index]) + '</span></div>';
+        }
+      },
+      effect: "creative",
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: [0, "-120%", -500]
+        },
+        next: {
+          shadow: true,
+          translate: [0, "120%", -500]
+        }
+      },
+      speed: 700
+    });
+
+    const productSwiper = new Swiper('.mainAdProduct-swiper', {
+      // Default parameters
+      slidesPerView: 1,
+      spaceBetween: 10,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 5,
+          spaceBetween: 40
+        }
+      }
+    });
+  </script>  
+</body>
+
+</html>
