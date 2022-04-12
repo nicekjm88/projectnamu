@@ -1,9 +1,27 @@
-.swiper {
+.a11y-hidden {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  -webkit-clip-path: circle(0);
+          clip-path: circle(0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.wrapper .swiper {
   width: 100%;
   height: 100%;
 }
 
-.swiper .swiper-slide {
+.wrapper .swiper .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,6 +32,19 @@
       -ms-flex-pack: center;
           justify-content: center;
   overflow: auto;
+}
+
+.wrapper .swiper-pagination-vertical.swiper-pagination-bullets,
+.wrapper .swiper-vertical > .swiper-pagination-bullets {
+  right: inherit;
+  left: 10px;
+}
+
+.wrapper .swiper-pagination-bullet span {
+  min-width: 200px;
+  display: inline-block;
+  text-align: left;
+  padding-left: 20px;
 }
 
 .swiper .swiper-slide.slide01 {
@@ -28,16 +59,157 @@
   background-color: cornflowerblue;
 }
 
-.swiper-pagination-vertical.swiper-pagination-bullets,
-.swiper-vertical > .swiper-pagination-bullets {
-  right: inherit;
-  left: 10px;
+#main {
+  position: relative;
 }
 
-.swiper-pagination-bullet span {
-  min-width: 200px;
-  display: inline-block;
-  text-align: left;
-  padding-left: 20px;
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.gnb {
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  right: 40px;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+}
+
+.gnb-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 12;
+}
+
+.gnb-btn .hamburger .line {
+  width: 50px;
+  height: 5px;
+  background-color: #ecf0f1;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.gnb-btn .hamburger .line:nth-child(2) {
+  width: 25px;
+  margin: 8px 0;
+}
+
+.gnb-btn .hamburger .line:hover {
+  cursor: pointer;
+}
+
+.gnb-slogan,
+.gnb nav {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.gnb-slogan {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 12;
+  margin-left: 0;
+}
+
+.gnb nav {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 12;
+  margin-left: 30%;
+}
+
+.gnb-circle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  z-index: 11;
+}
+
+.gnb.is-active .gnb-btn .hamburger .line:nth-child(1) {
+  -webkit-transform: translateY(13px) rotate(45deg);
+          transform: translateY(13px) rotate(45deg);
+}
+
+.gnb.is-active .gnb-btn .hamburger .line:nth-child(2) {
+  width: 0;
+}
+
+.gnb.is-active .gnb-btn .hamburger .line:nth-child(3) {
+  -webkit-transform: translateY(-13px) rotate(-45deg);
+          transform: translateY(-13px) rotate(-45deg);
+}
+
+.gnb.is-active .gnb-circle {
+  right: -65vh;
+  background-color: #01a0e4;
+  width: 1200px;
+  height: 1200px;
+}
+
+.gnb.is-active .gnb-slogan {
+  opacity: 1;
+  max-height: inherit;
+  visibility: visible;
+  margin-left: -10%;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.gnb.is-active nav {
+  opacity: 1;
+  max-height: inherit;
+  visibility: visible;
+  position: fixed;
+  -webkit-transition-delay: .7s;
+          transition-delay: .7s;
+}
+
+.gnb.is-active .gnb-dimmed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100vh;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.ql {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
 }
 /*# sourceMappingURL=main.css.map */
