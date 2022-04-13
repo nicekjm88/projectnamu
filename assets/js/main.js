@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
     creativeEffect: {
       prev: {
         shadow: true,
-        translate: [0, "-120%", -500],
+        translate: [0, "-120%", -400],
       },
       next: {
         shadow: true,
-        translate: [0, "120%", -500],
+        translate: [0, "120%", -400],
       },
     },
     speed: 700,
@@ -65,4 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
   $(".gnb-btn").on("click", function (e) {
     $(this).parent().toggleClass("is-active");
   });
+
+  $(".quick ul").on('mouseenter', function () {
+    $(this).addClass('is-active')
+  })
+
+  $(".quick ul").on('mouseleave', function () {
+    $(this).removeClass('is-active')
+  })
 });

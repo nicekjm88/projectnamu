@@ -1,6 +1,11 @@
+@charset "UTF-8";
 :root {
   --ti-cursor-margin-left: 0.1em;
   --ti-cursor-color: dodgerblue;
+}
+
+body {
+  background-color: #000;
 }
 
 .a11y-hidden {
@@ -39,10 +44,24 @@
   overflow: auto;
 }
 
+.wrapper .swiper-pagination-bullet {
+  opacity: 1;
+  background-color: #fff;
+}
+
+.wrapper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #d1ff00;
+}
+
+.wrapper .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,
+.wrapper .swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-bottom: 30px;
+}
+
 .wrapper .swiper-pagination-vertical.swiper-pagination-bullets,
 .wrapper .swiper-vertical > .swiper-pagination-bullets {
   right: inherit;
-  left: 10px;
+  left: 60px;
 }
 
 .wrapper .swiper-pagination-bullet span {
@@ -50,18 +69,29 @@
   display: inline-block;
   text-align: left;
   padding-left: 20px;
+  color: #fff;
+  position: relative;
+  top: -4px;
 }
 
 .swiper .swiper-slide.slide01 {
-  background-color: antiquewhite;
+  background: url("../images/ex1.png") 50% 0/contain no-repeat;
 }
 
 .swiper .swiper-slide.slide02 {
-  background-color: darkgrey;
+  background: url("../images/ex2.png") 50% 0/contain no-repeat;
 }
 
 .swiper .swiper-slide.slide03 {
-  background-color: cornflowerblue;
+  background: url("../images/ex3.png") 50% 0/contain no-repeat;
+}
+
+.swiper .swiper-slide.slide04 {
+  background: url("../images/ex4.png") 50% 0/contain no-repeat;
+}
+
+.swiper .swiper-slide.slide05 {
+  background: url("../images/ex5.png") 50% 0/contain no-repeat;
 }
 
 #main {
@@ -79,7 +109,7 @@
   position: absolute;
   top: 50%;
   margin-top: -50px;
-  right: 40px;
+  right: 60px;
   z-index: 10;
   width: 100px;
   height: 100px;
@@ -155,8 +185,8 @@
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.6s cubic-bezier(0.785, 0.135, 0.15, 1.186);
+  transition: all 0.6s cubic-bezier(0.785, 0.135, 0.15, 1.186);
   z-index: 11;
 }
 
@@ -211,10 +241,105 @@
   z-index: 10;
 }
 
-.ql {
-  position: absolute;
+/* 퀵링크 */
+.quick {
+  position: fixed;
+  right: 60px;
+  bottom: 60px;
+  z-index: 1;
+}
+
+.quick ul {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style-type: none;
+  width: 100px;
+  height: 100px;
   bottom: 0;
   right: 0;
-  z-index: 10;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #2a6df9), to(#6515cc));
+  background: linear-gradient(0deg, #2a6df9 10%, #6515cc 100%);
+  border-radius: 50px;
+  padding-top: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: height 0.45s ease;
+  transition: height 0.45s ease;
+  -webkit-box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.quick ul > li {
+  padding-left: 0;
+  list-style-type: none;
+  opacity: 0;
+  text-align: center;
+  margin-bottom: 19px;
+  -webkit-transition: visibility .7s ease, opacity .7s ease;
+  transition: visibility .7s ease, opacity .7s ease;
+  height: 60px;
+}
+
+.quick ul > li:last-child {
+  margin-bottom: 0;
+}
+
+.quick ul > li > a {
+  display: inline-block;
+  -webkit-transition: opacity .45s ease;
+  transition: opacity .45s ease;
+}
+
+.quick ul > li > a:hover {
+  opacity: 0.65;
+}
+
+.quick ul > li > a > span {
+  display: inline-block;
+  width: 100%;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease;
+}
+
+.quick ul > li.exp-button {
+  visibility: visible;
+  opacity: 1;
+}
+
+.quick ul.is-active {
+  height: 190px;
+  cursor: default;
+}
+
+.quick ul.is-active > li {
+  visibility: visible;
+  opacity: 1;
+}
+
+.quick ul.is-active > li > a > span {
+  opacity: 1;
+}
+
+.quick .icon {
+  width: 29px;
+  height: 34px;
+}
+
+.quick .icon-chatbot {
+  background: url("/uploads/media/ic_ad.png") no-repeat;
+  background-size: 29px;
+}
+
+.quick .icon-question {
+  background: url("/uploads/media/ic_ad.png") no-repeat;
+  background-size: 29px;
 }
 /*# sourceMappingURL=main.css.map */

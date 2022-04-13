@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>나무 커뮤니케이션</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/style/_vender/swiper-bundle.css" />  
   <link rel="stylesheet" href="assets/style/normalize.css" />
   <link rel="stylesheet" href="assets/style/main.css" />
 </head>
@@ -102,6 +102,11 @@
           <div class="swiper-slide slide03">Slide 3</div>
           <div class="swiper-slide slide04">Slide 4</div>
           <div class="swiper-slide slide05">Slide 5</div>
+          <!-- <div class="swiper-slide slide06">
+            <footer>
+              <img src="assets/images/ex6.png" alt="">
+            </footer>
+          </div> -->
         </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -109,16 +114,29 @@
     <!-- //Main Area -->
 
     <!-- Quick Link -->
-    <section class="ql">
-      <a href="#">빠른문의</a>
-      <a href="#">1:1 채팅상담</a>
-    </section>
+    <div class="quick">
+      <ul>
+        <li class="exp-button">
+          <a href="#">
+            <i class="icon icon-chatbot"></i>
+            <span>빠른문의</span>
+          </a>
+        </li>
+        <li class="exp-button">
+          <a href="#">
+            <i class="icon icon-question"></i>
+            <span>1:1채팅상담</span>
+          </a>
+        </li>        
+      </ul>
+    </div>
     <!-- //Quick Link -->
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/typeit@8.4.0/dist/index.umd.js"></script>
+  <script src="assets/js/_vender/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/_vender/anime.min.js"></script>
+  <script src="assets/js/_vender/swiper-bundle.min.js"></script>
+  <script src="assets/js/_vender/typeit.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 
